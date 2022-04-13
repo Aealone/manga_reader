@@ -1,0 +1,158 @@
+@media (max-width: 640px) {
+  .nav-item {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  #button-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .card-list {
+    padding: 0;
+  }
+}
+@media (min-width: 530px) {
+  .card-list {
+    padding: 1rem 5rem 1rem 5rem;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+
+}
+body {
+  min-width: 340px;
+  font-size: 1rem;
+  font-weight:500;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  height: 50px;
+}
+main {
+  margin-top: 50px;
+}
+nav {
+  width: 100%;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+}
+img {
+  height: 100%;
+  object-fit: cover;
+}
+.nav-bar {
+  padding: 0;
+  margin: 0;
+  line-height: 50px;
+  display: flex;
+  list-style: none;
+}
+.nav-item:hover {
+  background-color: whitesmoke;
+}
+.nav-bar a {
+  padding: 12px;
+}
+.card-head {
+  height: 3rem;
+}
+.card {
+  display: flex;
+  border-bottom: solid;
+  height: 10rem;
+  padding: 10px;
+}
+.card p {
+  margin: 0;
+}
+.card-head h2 {
+  margin: 0;
+  text-align: center;
+}
+.card-img {
+  flex: 0 0 9%;
+}
+.card-titles {
+  padding-left: 10px;
+  flex: 4;
+}
+.card-titles-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.card-author {
+  padding-left: 10px;
+  flex: 1;
+}
+.drawer[isActive = false] {
+  display: none;
+}
+.drawer[isVisible = true] .drawer-content{
+  transform: translate3d(0, 0, 0);
+}
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 1;
+}
+.drawer-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: whitesmoke;
+  height: 100%;
+  width: 250px;
+  z-index: 2;
+  transform: translate3d(100%, 0, 0);
+  transition: 0.25s;
+}
+.menu-list {
+  padding: 0;
+  line-height: 50px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.menu-list a {
+  padding-left: 50px;
+  display: block;
+}
+.menu-list li:hover {
+  background-color: white;
+}
+#id-logo {
+  display: flex;
+  padding: 0;
+}
+#button-menu {
+  border-style: hidden;
+  cursor: pointer;
+  padding: unset;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  padding: 7px;
+}

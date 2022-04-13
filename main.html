@@ -4,27 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MANGA_READER</title>
-    <link href="app.css" rel="stylesheet">
+    <link href="styles/app.css" rel="stylesheet">
+    <script src="scripts/app.js" defer></script>
   </head>
   <body>
+    <aside class="drawer" isActive = false isVisible = false>
+      <div class="drawer-overlay"></div>
+      <div class="drawer-content" tabindex="1">
+        <nav>
+          <ul class="menu-list">
+            <li >
+              <a href="screens/titles.html">
+                <span> Каталог </span>
+              </a>
+            </li>
+            <li>
+              <a href="screens/popular.html">
+                <span> Популярное </span>
+              </a>
+            </li>
+            <li>
+              <a href="screens/login.html">
+                <span> Войти </span>
+              </a>
+            </li>
+            <li>
+              <a href="screens/registration.html">
+                <span> Регистрация </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    
     <header>
-      <!-- <div></div> -->
       <a id="id-logo" href="">
-        <img alt="Лого" src="ln.jpg" style="width: 50px;">
+        <img alt="Лого" src="images/ln.jpg" style="width: 50px;">
       </a>
       <nav class="nav-bar">
         <ul class="nav-bar">
           <li class="nav-item">
-            <a class = "nav-a" href="titles.html">
+            <a href="screens/titles.html">
               <span> Каталог </span>
             </a>
           </li>
           <li class="nav-item">
-            <a class = "nav-a" href="popular.html">
+            <a href="screens/popular.html">
               <span> Популярное </span>
             </a>
           </li>
-          <!-- <li><div id="spacer"></div></li> -->
         </ul>
         <ul class="nav-bar">
           <li id="search-form">
@@ -32,20 +61,20 @@
               <input type="search" name="searchLine" class="form-search" value="" placeholder="Search...">
             </form>
           </li>
-          <li id="button-menu">
-            <button style="background-color: white;">
-              <img alt="Иконка меню" src="icon-menu.png">
-            </button>
-          </li>
           <li class="nav-item">
-            <a class = "nav-a" href="login.html">
+            <a href="screens/login.html">
               <span> Войти </span>
             </a>
           </li>
           <li class="nav-item">
-            <a class = "nav-a" href="registration.html">
+            <a href="screens/registration.html">
               <span> Регистрация </span>
             </a>
+          </li>
+          <li>
+            <button id="button-menu">
+              <img alt="Иконка меню" src="images/icon-menu.png">
+            </button>
           </li>
         </ul>
       </nav>
@@ -60,7 +89,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
@@ -79,7 +108,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
@@ -94,7 +123,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
@@ -109,7 +138,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
@@ -124,7 +153,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
@@ -139,7 +168,7 @@
         <div class="card">
           <div class="card-img">
             <a href="">
-              <img alt="Манга превью" src="image.jpg">
+              <img alt="Манга превью" src="images/image.jpg">
             </a>
           </div>
           <div class="card-titles">
