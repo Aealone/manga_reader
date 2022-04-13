@@ -1,18 +1,16 @@
 const windowInnerWidth = window.innerWidth;
-document.body.addEventListener("click", clickHandler);
-window.addEventListener("resize", checkResize);
 const drawer = document.querySelector(".drawer");
-const drawers = document.querySelector(".drawer-content");
+const drawerContent = document.querySelector(".drawer-content");
 
-
-// alert(document.location.href)
+window.addEventListener("resize", checkResize);
+document.body.addEventListener("click", clickHandler);
+document.body.addEventListener("keydown", keydownHandler);
 
 function checkResize() {
-    if (window.innerWidth > 640 && document.querySelector(".drawer").getAttribute("isActive") === "true") {
+    if (window.innerWidth > 640 && drawer.getAttribute("isActive") === "true") {
       drawerClose();
     }
   }
-
 
 function drawerOpen() {
     drawer.setAttribute("isActive", true)
@@ -20,8 +18,8 @@ function drawerOpen() {
 
     setTimeout(function () {
         drawer.setAttribute("isVisible", true);
-        drawers.focus();
-        trapFocus(drawers);
+        drawerContent.focus();
+        trapFocus(drawerContent);
       }, 20); 
 }
 
@@ -52,31 +50,33 @@ function clickHandler(event) {
     }
 }
 
+function keydownHandler(event) {
+    if (drawer.getAttribute("isVisible") === "true" && (event.key === 'Escape' || event.keyCode === 27)) {
+        drawerClose();
+      }
+}
+
 // Trap Focus 
-// https://hiddedevries.nl/en/blog/2017-01-29-using-javascript-to-trap-focus-in-an-element
-//
 function trapFocus(element) {
-    var focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-    var firstFocusableEl = focusableEls[0];  
-    var lastFocusableEl = focusableEls[focusableEls.length - 1];
-    var KEYCODE_TAB = 9;
+    let focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    let firstFocusableEl = focusableEls[0];  
+    let lastFocusableEl = focusableEls[focusableEls.length - 1];
 
     element.addEventListener('keydown', function(e) {
-        var isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+        var isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
 
         if (!isTabPressed) { 
         return; 
         }
-
-        if ( e.shiftKey ) /* shift + tab */ {
-        if (document.activeElement === firstFocusableEl) {
-            lastFocusableEl.focus();
-            e.preventDefault();
+        if ( e.shiftKey ) {// shift + tab
+            if (document.activeElement === firstFocusableEl) {
+                lastFocusableEl.focus();
+                e.preventDefault();
             }
-        } else /* tab */ {
-        if (document.activeElement === lastFocusableEl) {
-            firstFocusableEl.focus();
-            e.preventDefault();
+        } else{ // tab 
+            if (document.activeElement === lastFocusableEl) {
+                firstFocusableEl.focus();
+                e.preventDefault();
             }
         }
     });
