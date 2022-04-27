@@ -52,10 +52,7 @@ nav {
 a {
   text-decoration: none;
 }
-img {
-  height: 100%;
-  object-fit: cover;
-}
+
 .nav-bar {
   padding: 0;
   margin: 0;
@@ -116,8 +113,7 @@ img {
   padding: 0;
 }
 #id-logo > img {
-  max-width: 100%;
-  object-fit: cover;
+  width: 50px;
 }
 #button-menu {
   border-style: hidden;
@@ -127,4 +123,7 @@ img {
   width: 50px;
   background-color: white;
   padding: 7px;
+}
+#button-menu img {
+  width: 100%;
 }

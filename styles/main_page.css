@@ -1,3 +1,8 @@
+img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
 .card-head {
   height: 3rem;
 }
