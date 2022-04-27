@@ -1,4 +1,3 @@
-const windowInnerWidth = window.innerWidth;
 const drawer = document.querySelector(".drawer");
 const drawerContent = document.querySelector(".drawer-content");
 
@@ -6,11 +5,17 @@ window.addEventListener("resize", checkResize);
 document.body.addEventListener("click", clickHandler);
 document.body.addEventListener("keydown", keydownHandler);
 
+async function getMangaList() {
+    let response = await fetch('http://localhost:5000');
+    let mangaList =  await response.json();
+    return mangaList;
+}
+
 function checkResize() {
     if (window.innerWidth > 640 && drawer.getAttribute("isActive") === "true") {
-      drawerClose();
+        drawerClose();
     }
-  }
+}
 
 function drawerOpen() {
     drawer.setAttribute("isActive", true)
@@ -45,7 +50,7 @@ function clickHandler(event) {
 
     if(openClick) {
         drawerOpen();
-    } else if (!drawerClick) {
+    } else if (!drawerClick && drawer.getAttribute("isVisible") === "true") {
         drawerClose();
     }
 }

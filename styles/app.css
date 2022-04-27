@@ -26,13 +26,13 @@ html {
 }
 *, *::before, *::after {
   box-sizing: inherit;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 }
 body {
   min-width: 340px;
   font-size: 1rem;
-  font-weight:500;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
 }
 header {
   position: fixed;
@@ -68,38 +68,6 @@ img {
 }
 .nav-bar a {
   padding: 12px;
-}
-.card-head {
-  height: 3rem;
-}
-.card {
-  display: flex;
-  border-bottom: solid;
-  height: 10rem;
-  padding: 10px;
-}
-.card p {
-  margin: 0;
-}
-.card-head h2 {
-  margin: 0;
-  text-align: center;
-}
-.card-img {
-  flex: 0 0 9%;
-}
-.card-titles {
-  padding-left: 10px;
-  flex: 4;
-}
-.card-titles-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.card-author {
-  padding-left: 10px;
-  flex: 1;
 }
 .drawer[isActive = false] {
   display: none;
@@ -146,6 +114,10 @@ img {
 #id-logo {
   display: flex;
   padding: 0;
+}
+#id-logo > img {
+  max-width: 100%;
+  object-fit: cover;
 }
 #button-menu {
   border-style: hidden;

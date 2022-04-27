@@ -1,0 +1,32 @@
+.card-head {
+  height: 3rem;
+}
+.card {
+  display: flex;
+  border-bottom: solid;
+  height: 10rem;
+  padding: 10px;
+}
+.card p {
+  margin: 0;
+}
+.card-head h2 {
+  margin: 0;
+  text-align: center;
+}
+.card-img {
+  flex: 0 0 9%;
+}
+.card-titles {
+  padding-left: 10px;
+  flex: 4;
+}
+.card-titles-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.card-author {
+  padding-left: 10px;
+  flex: 1;
+}

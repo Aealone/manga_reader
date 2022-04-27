@@ -2,9 +2,148 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>MANGA_READER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MANGA TITLES</title>
+    <link href="../styles/app.css" rel="stylesheet">
+    <link href="../styles/titles.css" rel="stylesheet">
+    <script src="../scripts/app.js" defer></script>
+    <script src="../scripts/titles.js" defer></script>
   </head>
   <body>
-   <p>Каталог</p>
+    <aside class="drawer" isActive = false isVisible = false>
+      <div class="drawer-overlay"></div>
+      <div class="drawer-content" tabindex="1">
+        <nav>
+          <ul class="menu-list">
+            <li >
+              <a href="../screens/titles.html">
+                <span> Каталог </span>
+              </a>
+            </li>
+            <!-- <li>
+              <a href="screens/popular.html">
+                <span> Популярное </span>
+              </a>
+            </li> -->
+            <li>
+              <a href="../screens/login.html">
+                <span> Войти </span>
+              </a>
+            </li>
+            <li>
+              <a href="../screens/registration.html">
+                <span> Регистрация </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    
+    <header>
+      <a id="id-logo" href="main_page.html">
+        <img alt="Лого" src="../images/ln.jpg" style="width: 50px;">
+      </a>
+      <nav class="nav-bar">
+        <ul class="nav-bar">
+          <li class="nav-item">
+            <a href="../screens/titles.html">
+              <span> Каталог </span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="screens/popular.html">
+              <span> Популярное </span>
+            </a>
+          </li> -->
+        </ul>
+        <ul class="nav-bar">
+          <li id="search-form">
+            <form method="get" action="">
+              <input type="search" name="searchLine" class="form-search" value="" placeholder="Search...">
+            </form>
+          </li>
+          <li class="nav-item">
+            <a href="../screens/login.html">
+              <span> Войти </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../screens/registration.html">
+              <span> Регистрация </span>
+            </a>
+          </li>
+          <li>
+            <button id="button-menu">
+              <img alt="Иконка меню" src="../images/icon-menu.png">
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <aside class="menu-filter">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="btn-filter-close" tabindex = 0>
+          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+        </svg>
+        <!-- <button class="menu-filter-button-close"></button> -->
+        <h4>Тип</h4>
+        <ul class="manga-type-filter">
+          
+          <label for="checkbox-manga">
+            <li>
+              <input type="checkbox" id="checkbox-manga" name="Манга" class="mangaTypeCheckbox">
+              <span class="checkbox-text">Манга</span> 
+            </li>
+          </label>
+          <label for="checkbox-manhya">
+            <li>
+              <input type="checkbox" id="checkbox-manhya" name="Маньхуа" class="mangaTypeCheckbox">
+              <span class="checkbox-text">Маньхуа</span> 
+            </li>
+          </label>
+          <label for="checkbox-manhva">
+            <li>
+              <input type="checkbox" id="checkbox-manhva" name="Манхва" class="mangaTypeCheckbox">
+              <span class="checkbox-text">Манхва</span> 
+            </li>
+          </label>
+          <label for="checkbox-novel">
+            <li>
+              <input type="checkbox" id="checkbox-novel" name="Новелла" class="mangaTypeCheckbox">
+              <span class="checkbox-text">Новелла</span> 
+            </li>
+          </label>
+        </ul>
+        <h4>Статус</h4>
+        <ul class="manga-status-filter">
+          <label for="checkbox-inprocess">
+            <li>
+              <input type="checkbox" id="checkbox-inprocess" name="Выкладывается" class="mangaStatusCheckbox">
+              <span class="checkbox-text">Выкладывается</span> 
+            </li>
+          </label>
+          <label for="checkbox-complited">
+            <li>
+              <input type="checkbox" id="checkbox-complited" name="Завершён" class="mangaStatusCheckbox">
+              <span class="checkbox-text">Завершён</span> 
+            </li>
+          </label>
+          <label for="checkbox-droped">
+            <li>
+              <input type="checkbox" id="checkbox-droped" name="Заброшен" class="mangaStatusCheckbox">
+              <span class="checkbox-text">Заброшен</span> 
+            </li>
+          </label>
+        </ul>
+        <button class="btn-filter" isReadyToExecute = "true">Показать</button>
+      </aside>
+          <!--grid will be here -->
+    </main>
+    <div class="bottom-bar">
+      <button id="btn-sort">Сортировка</button>
+      <button class="btn-filter-open">Фильтры</button>
+    </div>
  </body>
 </html>
